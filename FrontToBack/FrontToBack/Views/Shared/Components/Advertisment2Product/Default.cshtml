@@ -1,0 +1,16 @@
+﻿@model List<Advertisment2Product>
+
+@foreach (var product in Model)
+{
+    <div class="col-lg-cookie">
+        <a href="">
+            <img src="~/assets/img/@product.Image" alt="">
+            <div class="cookie-text">
+                <h6>@product.Discount</h6>
+                <h4>@product.Text</h4>
+                <p>@product.SubText</p>
+                <button>Shop Now</button>
+            </div>
+        </a>
+    </div>
+}

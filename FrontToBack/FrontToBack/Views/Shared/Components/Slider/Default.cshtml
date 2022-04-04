@@ -1,0 +1,26 @@
+﻿@model List<Slider>
+
+
+
+@foreach (var slider in Model)
+{
+
+    <div class="img-1">
+        <img src="~/assets/img/@slider.Image" alt="">
+        <div class="text-1">
+                <p>Exclusive offer <span class="btn-success discount-text">&nbsp; @slider.Discount% off &nbsp; </span></p>
+            
+            @if (slider.Title != null)
+            {
+                @Html.Raw(slider.Title)
+            }
+            @if (slider.SubTitle != null)
+            {
+                <p>@slider.SubTitle</p>
+            }
+            <span>from</span>
+            <span class="text-danger price">$@slider.Price</span>
+            <button class="btn btn-primary">Shop Now <i class="fa-solid fa-right-long"></i></button>
+        </div>
+    </div>
+}

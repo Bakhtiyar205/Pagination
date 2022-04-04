@@ -1,0 +1,26 @@
+﻿@model Advertisment2Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Photo"></label>
+            <input class="form-control" asp-for="Photo" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+            <label asp-for="Discount"></label>
+            <input type="text" class="form-control" asp-for="Discount" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Discount"></span>
+            <label asp-for="Text"></label>
+            <input type="text" class="form-control" asp-for="Text" style="width:350px;">
+            <span class="text-danger" asp-validation-for="Text"></span>
+            <label asp-for="SubText"></label>
+            <input type="text" class="form-control" asp-for="SubText" style="width:350px;">
+            <span class="text-danger" asp-validation-for="SubText"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

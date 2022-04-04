@@ -1,0 +1,49 @@
+﻿@model List<Product>
+@{
+    int productIndex = 0;
+}
+
+
+@foreach (var product in Model)
+{
+    
+    if (productIndex < 6)
+    {
+        <div class="col-lg-4 col-md-6">
+            <a href="#">
+                <div class="card card-box">
+                    <img src="@product.Images.FirstOrDefault().Image"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            Some quick example text to build on the card title and
+                            make
+                            up the bulk of the card's content.
+                        </p>
+                    </div>
+                    <div class="add-card">
+                        <form class="basketform" asp-controller="Home" asp-action="AddBasket" data-id="@product.Id" asp-route-id="@product.Id" method="post">
+                            <button type="submit" class="btn btn-primary btn-sm">Add Card</button>
+                        </form>
+                      
+
+                    </div>
+                    <div class="heart-wide">
+                        <div class="wider-screen">
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                        <div class="heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="text-cards">
+                        <p>40$</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+    productIndex++;
+}
+

@@ -1,0 +1,21 @@
+﻿
+@model Slider
+
+<div class="container">
+    <form class="forms-sample" method="post" asp-action="Update" enctype="multipart/form-data">
+        <div class="form-group">
+            <img src="~/assets/img/@Model.Image" style="width:200px;height:200px;border-radius:10%"/>
+            <br />
+            @*For Naming Label*@
+            <label asp-for="Photo"></label>
+            <input class="form-control" asp-for="Photo">
+            <span class="text-danger" asp-validation-for="Photo"></span>
+            <label asp-for="SubTitle"></label>
+            <input type="text" class="form-control" asp-for="SubTitle" style="width:350px;">
+            <span class="text-danger" asp-validation-for="SubTitle"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>

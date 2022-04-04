@@ -1,0 +1,14 @@
+﻿@model Advertisment2Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="form-group">
+        <img src="~/assets/img/@Model.Image" style="width:100px;height:100px;border-radius:10%" />
+        <p> @Model.Discount</p>
+        <p> @Model.Text</p>
+        <p> @Model.SubText</p>
+    </div>
+    <a asp-action="Index" class="btn btn-light">Cancel</a>
+</div>

@@ -1,0 +1,48 @@
+﻿@model List<BasketDetailVM>
+@{
+    int count = 1;
+}
+
+@if (Model.Count() < 1)
+{
+    <div id="basketelement" data-count="0">
+        <p><i class="fa-solid fa-basket-shopping"></i></p>
+        <p>
+            No Products in the Card
+        </p>
+    </div>
+
+
+}
+else
+{
+    <div id="basket-element" data-count="@Model.Count()">
+        <table class="table table-striped">
+
+            <tbody>
+                @foreach (var basketProduct in Model)
+                {
+
+                    <tr>
+                        <td>
+                            @count
+                        </td>
+                        <td>
+                            @basketProduct.ProductName
+                        </td>
+                        <td>
+                            @basketProduct.Count
+                        </td>
+                        <td>
+                            @basketProduct.Price
+                        </td>
+                    </tr>
+                    count++;
+
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+}
